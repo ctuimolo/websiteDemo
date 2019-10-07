@@ -50,6 +50,24 @@ p.child {
     padding: 12px 12px 12px;
 }
 
+.postListButton {
+    font-family: "lucida Console", Monaco, monospace;
+    background-color: #181818;
+    color: white;
+    border-color: white;
+}
+
+button:hover {
+    color: hotpink;
+    cursor: pointer;
+}
+
+button:disabled {
+    color: darkgray;
+    border-color: darkgray;
+    cursor: default;
+}
+
 .link {
     font-size: 12px;
     font-family: "Lucida Console", Monaco, monospace;

@@ -1,10 +1,12 @@
 {
     "title" : "The next day", 
     "date"  : "2019-08-15",
+    "ID"    : "004",
     "body"  : [
         "(TEST Nfqwfq fwqfwEXT DAY)<",
         "alskfjaowli faoijwfaoijwiojas fallsakjjafqwnv cvoiaojd aoljsf",
         "qqqqqqqqqqqqq",
-        "1111111111111"
+        "1111111111111",
+        "日本語テスト・カタカナひらがな漢字"
     ]
 }

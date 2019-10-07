@@ -15,7 +15,7 @@
                     This is a link to otherpage.html in the same folder...
                 </a>
             </div>
-            <div id='postList' class='postList'>
+            <div id='postListContainer' class='postListContainer'>
                 <div class='topRightHeader'>
                     <text>
                         Test floating right thing here...<br/>
@@ -36,7 +36,15 @@
                         Things here... Things here...Things here...Things here...<br/>
                         Things here... Things here...Things here...Things here...<br/>
                         Things here... Things here...Things here...Things here...<br/>
+                        <br/>
                     </text>
+                    <button class='postListButton' type="button" disabled="true">newer posts</button>
+                    <button class='postListButton' type="button">older posts</button>
+                    <div id='postList' class='postList'>
+                    </div>
+                    <div><br/></div>
+                    <button class='postListButton' type="button" disabled="true">newer posts</button>
+                    <button class='postListButton' type="button">older posts</button>
                 </div>
             </div>
         </div>
@@ -44,7 +52,6 @@
 </body>
 
 <script src="./scripts/jquery.js"></script>
-<script src="./scripts/require.js"></script>
-<script src="./scripts/loadPosts.js" type="module"></script>
+<script src="./scripts/loadPosts.js"></script>
 
 </html>
