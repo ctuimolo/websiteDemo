@@ -7,15 +7,17 @@
 </head>
 
 <body>
-    <div class='body'>
+    <div class='centerContainer'>
+        <h1>This is a heading</h1>
         <div>
-            <h1>This is a heading</h1>
-            <div>
-                <a class='link' href="./otherpage.html">
-                    This is a link to otherpage.html in the same folder...
-                </a>
-            </div>
-            <div id='postListContainer' class='postListContainer'>
+            <a class='link' href="./otherpage.html">
+                This is a link to otherpage.html in the same folder...
+            </a>
+        </div>
+        <div id='postListContainer' class='postListContainer'>
+
+            <div class="postList">
+
                 <div class='topRightHeader'>
                     <text>
                         Test floating right thing here...<br/>
@@ -29,22 +31,14 @@
                         Test floating right thing here...<br/>
                     </text>
                 </div>
-                <div class='postListHeader'>
-                    <text>
-                        Things here... Things here...Things here...Things here...<br/>
-                        Things here... Things here...Things here...Things here...<br/>
-                        Things here... Things here...Things here...Things here...<br/>
-                        Things here... Things here...Things here...Things here...<br/>
-                        Things here... Things here...Things here...Things here...<br/>
-                        <br/>
-                    </text>
-                    <button class='postListButton' type="button" disabled="true">newer posts</button>
-                    <button class='postListButton' type="button">older posts</button>
-                    <div id='postList' class='postList'>
-                    </div>
-                    <div><br/></div>
-                    <button class='postListButton' type="button" disabled="true">newer posts</button>
-                    <button class='postListButton' type="button">older posts</button>
+
+                <div class=postListNavigator>
+                </div>
+
+                <div id='postListBody' class='postListBody'>
+                </div>
+                
+                <div class=postListNavigator>
                 </div>
             </div>
         </div>

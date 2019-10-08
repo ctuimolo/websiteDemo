@@ -6,6 +6,10 @@ var postCount = 0;
 var posts = [];
 var postListPromises = [];
 var defaultPostListSize = 6;
+var startPage = 0;
+var currentPage = 0;
+var totalPages = 0;
+var navBarSize = 5;
 //var startIndex = parseInt(params.attr('startIndex'));
 //var startIndex = 0;
 
@@ -47,8 +51,6 @@ function formatPostBody(post)
     );
 }
 
-
-
 function getPost(postIndex, postID)
 {
     var request = $.getJSON("../../data/posts/"+postIndex["posts"][postID]+".json", function(post) 
@@ -59,11 +61,71 @@ function getPost(postIndex, postID)
     return request;
 }
 
+
+function writePostListNavigator(startIndex) 
+{
+    $(".postListNavigator").empty();
+    $(".postListNavigator").append("<text>page [");
+    for(var i = 0; i <= totalPages; i++)
+    {
+     
+        if(i == currentPage)
+        {
+            $(".postListNavigator").append(
+                "<a class='postListPagesLinks' style='color:hotpink'>"+
+                    i +
+                "</a>"
+            )
+        } else 
+        {
+            $(".postListNavigator").append(
+                "<a class='postListPagesLinks'>"+
+                    i +
+                "</a>"
+            )
+        }
+    }
+    $(".postListNavigator").append("<text>] </text>");
+    $(".postListNavigator").append(
+        "<button class='newerPostsButton' type='button' disabled='true' onClick='window.scrollTo(0,0);'>prev page</button>" +
+        "<button class='olderPostsButton' type='button' disabled='true' onClick='window.scrollTo(0,0);'>next page</button>"
+    );
+
+    // manage active buttons dependant on currentPage
+    if(currentPage == 0)
+    {
+        $(".newerPostsButton").attr("disabled","true");
+    }else if(currentPage > 0)
+    {
+        $(".newerPostsButton").removeAttr("disabled");
+    }
+
+    if(startIndex + defaultPostListSize > postCount)
+    {
+        $(".olderPostsButton").attr("disabled","true");
+    } else {
+        $(".olderPostsButton").removeAttr("disabled");
+    }
+
+    $(".olderPostsButton").click(function()
+    {
+        currentPage += 1;
+        writePosts(6 * currentPage);
+    });
+
+    $(".newerPostsButton").click(function()
+    {
+        currentPage -= 1;
+        writePosts(6 * currentPage);
+    });
+}
+
 function writePosts(startIndex, postListSize = defaultPostListSize)
 {
     $.getJSON("../../data/postIndex.json", function(postIndexRaw) 
     {
         postCount = postIndexRaw["postCount"];
+        totalPages = parseInt(postCount / defaultPostListSize);
     })
 
     .then(function (postIndex) 
@@ -79,12 +141,13 @@ function writePosts(startIndex, postListSize = defaultPostListSize)
 
         $.when.apply(null, postListPromises).done(function() 
         {
-            $("#postlist").empty();
+            writePostListNavigator(startIndex);
+            $("#postListBody").empty();
             for(var i = 0; i < postListSize; i++)
             {
                 if(posts[i+startIndex] != null) 
                 {
-                    $("#postList").append(
+                    $("#postListBody").append(
                         "<div class='post'>" +
                             "<text>===== POST #"+(i+startIndex)+" === ID: "+getPostID(posts[i+startIndex])+" ====="+"</text>"+
                             formatPostTitle(posts[i+startIndex])+
@@ -93,18 +156,19 @@ function writePosts(startIndex, postListSize = defaultPostListSize)
                         "</div>"
                     );
                 } else {
-                    $("#postList").append(
+                    /*$("#postListBody").append(
                         "<div class='post'>" +
                             "<text> === ERROR POSTLIST INDEX: " + (i+startIndex) + " === </text>" +
                         "</div>"
-                    );
+                    );*/
                 };
             }
         })
     });
 }
- 
+
 $(document).ready(function() 
 {
     writePosts(0);
 });
+
