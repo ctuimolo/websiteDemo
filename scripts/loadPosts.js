@@ -33,7 +33,8 @@ function formatPostDate(post)
 {
     return (
         "<div class='postDate'>"+
-            "<text>"+
+        "<i class='far fa-calendar-alt' style='font-size:11px;color:hotpink'></i>"+
+            "<text> "+
                 post["date"]+
             "</text>"+
         "</div>"
@@ -49,6 +50,17 @@ function formatPostBody(post)
             "</text>"+
         "</div>"
     );
+}
+
+function formatPostID(post)
+{
+    return (
+        "<div class='postID'>"+
+            "<text>"+
+                "履歴:log [" + getPostID(post).padStart(5,'0') + "]" +
+            "</text>"+
+        "</div>"
+    )
 }
 
 function getPost(postIndex, postID)
@@ -83,7 +95,7 @@ function writePostListPagesLink(toPage, clickable)
 function writePostListNavigator(startIndex) 
 {
     $(".postListNavigator").empty();
-    $(".postListNavigator").append("<text>ページ [");
+    $(".postListNavigator").append("<text>ページ:page [");
     
     if(totalPages <= 6)
     {
@@ -234,6 +246,7 @@ function writePosts(startIndex, postListSize = defaultPostListSize)
                             formatPostTitle(posts[i+startIndex])+
                             formatPostDate(posts[i+startIndex])+
                             formatPostBody(posts[i+startIndex])+
+                            formatPostID(posts[i+startIndex])+
                         "</div>"
                     );
                 } else {

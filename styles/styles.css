@@ -48,10 +48,14 @@ body {
     margin-bottom: 10px;
 }
 
-.postBody{
+.postBody {
     width: 650px;
     margin: 20px;
     padding-bottom: 20px;
+}
+
+.postID {
+    text-align: right;
 }
 
 button {
