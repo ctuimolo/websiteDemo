@@ -22,8 +22,8 @@ function formatPostTitle(post)
 {
     return (
         "<div>"+
-            "<text>"+
-                "TITLE: " + post["title"]+
+            "<text class='postTitle'>"+
+                post["title"]+
             "</text>"+
         "</div>"
     );
@@ -32,9 +32,9 @@ function formatPostTitle(post)
 function formatPostDate(post)
 {
     return (
-        "<div>"+
+        "<div class='postDate'>"+
             "<text>"+
-                "DATE: " + post["date"]+
+                post["date"]+
             "</text>"+
         "</div>"
     );
@@ -61,11 +61,29 @@ function getPost(postIndex, postID)
     return request;
 }
 
+function writePostListPagesLink(toPage, clickable)
+{
+    if(clickable == true)
+    {
+        $(".postListNavigator").append(
+            "<a class='postListPagesLinks' data-topage='"+toPage+"'>"+
+                toPage +
+            "</a>"
+        );
+    } else 
+    {
+        $(".postListNavigator").append(
+            "<text class='postListPagesLinks' style='color:hotpink;text-decoration:underline' data-topage='"+toPage+"'>"+
+                toPage +
+            "</text>"
+        );
+    }
+}
 
 function writePostListNavigator(startIndex) 
 {
     $(".postListNavigator").empty();
-    $(".postListNavigator").append("<text>page [");
+    $(".postListNavigator").append("<text>ページ [");
     
     if(totalPages <= 6)
     {
@@ -73,18 +91,10 @@ function writePostListNavigator(startIndex)
         {
             if(i == currentPage)
             {
-                $(".postListNavigator").append(
-                    "<text class='postListPagesLinks' style='color:hotpink;text-decoration:underline' data-topage='"+i+"'>"+
-                        i +
-                    "</text>"
-                );
+                writePostListPagesLink(i, false);
             } else 
             {
-                $(".postListNavigator").append(
-                    "<a class='postListPagesLinks' data-topage='"+i+"'>"+
-                        i +
-                    "</a>"
-                );
+                writePostListPagesLink(i, true);
             }
         }
     } else 
@@ -95,18 +105,10 @@ function writePostListNavigator(startIndex)
             {
                 if(i == currentPage)
                 {
-                    $(".postListNavigator").append(
-                        "<text class='postListPagesLinks' style='color:hotpink;text-decoration:underline' data-topage='"+i+"'>"+
-                            i +
-                        "</text>"
-                    );
+                    writePostListPagesLink(i, false);
                 } else 
                 {
-                    $(".postListNavigator").append(
-                        "<a class='postListPagesLinks' data-topage='"+i+"'>"+
-                            i +
-                        "</a>"
-                    );
+                    writePostListPagesLink(i, true);
                 }
             }
             $(".postListNavigator").append(
@@ -125,18 +127,10 @@ function writePostListNavigator(startIndex)
             {
                 if(i == 0)
                 {
-                    $(".postListNavigator").append(
-                        "<text class='postListPagesLinks' style='color:hotpink;text-decoration:underline' data-topage='"+currentPage+"'>"+
-                            parseInt(currentPage+i) +
-                        "</text>"
-                    );
+                    writePostListPagesLink(currentPage+i, false);
                 } else 
                 {
-                    $(".postListNavigator").append(
-                        "<a class='postListPagesLinks' data-topage='"+parseInt(currentPage+i)+"'>"+
-                            parseInt(currentPage+i) +
-                        "</a>"
-                    );
+                    writePostListPagesLink(currentPage+i, true);
                 }
             }
             $(".postListNavigator").append(
@@ -155,18 +149,10 @@ function writePostListNavigator(startIndex)
             {
                 if(i == currentPage)
                 {
-                    $(".postListNavigator").append(
-                        "<text class='postListPagesLinks' style='color:hotpink;text-decoration:underline' data-topage='"+i+"'>"+
-                            i +
-                        "</text>"
-                    );
+                    writePostListPagesLink(i, false);
                 } else 
                 {
-                    $(".postListNavigator").append(
-                        "<a class='postListPagesLinks' data-topage='"+i+"'>"+
-                            i +
-                        "</a>"
-                    );
+                    writePostListPagesLink(i, true);
                 }
             }
         }
@@ -174,8 +160,8 @@ function writePostListNavigator(startIndex)
 
     $(".postListNavigator").append("<text>] </text>");
     $(".postListNavigator").append(
-        "<button class='newerPostsButton' type='button' disabled='true' onClick='window.scrollTo(0,0);'>prev page</button>" +
-        "<button class='olderPostsButton' type='button' disabled='true' onClick='window.scrollTo(0,0);'>next page</button>"
+        "<button class='newerPostsButton' type='button' disabled='true' onClick='window.scrollTo(0,0);'>< 進</button>" +
+        "<button class='olderPostsButton' type='button' disabled='true' onClick='window.scrollTo(0,0);'>遡 ></button>"
     );
 
     // manage active buttons dependant on currentPage
@@ -244,7 +230,7 @@ function writePosts(startIndex, postListSize = defaultPostListSize)
                 {
                     $("#postListBody").append(
                         "<div class='post'>" +
-                            "<text>===== POST #"+(i+startIndex)+" === ID: "+getPostID(posts[i+startIndex])+" ====="+"</text>"+
+                            //"<text>===== POST #"+(i+startIndex)+" === ID: "+getPostID(posts[i+startIndex])+" ====="+"</text>"+
                             formatPostTitle(posts[i+startIndex])+
                             formatPostDate(posts[i+startIndex])+
                             formatPostBody(posts[i+startIndex])+
