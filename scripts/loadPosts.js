@@ -64,6 +64,8 @@ function getPost(postIndex, postID)
 
 function writePostListNavigator(startIndex) 
 {
+    var pageLinksArray = [];
+
     $(".postListNavigator").empty();
     $(".postListNavigator").append("<text>page [");
     for(var i = 0; i <= totalPages; i++)
@@ -72,17 +74,18 @@ function writePostListNavigator(startIndex)
         if(i == currentPage)
         {
             $(".postListNavigator").append(
-                "<a class='postListPagesLinks' style='color:hotpink'>"+
+                "<a class='postListPagesLinks' style='color:hotpink' data-topage='"+i+"'>"+
                     i +
                 "</a>"
-            )
+            );
         } else 
         {
             $(".postListNavigator").append(
-                "<a class='postListPagesLinks'>"+
+                "<a class='postListPagesLinks' data-topage='"+i+"'>"+
                     i +
                 "</a>"
-            )
+            );
+            pageLinksArray.push(i);
         }
     }
     $(".postListNavigator").append("<text>] </text>");
@@ -110,13 +113,20 @@ function writePostListNavigator(startIndex)
     $(".olderPostsButton").click(function()
     {
         currentPage += 1;
-        writePosts(6 * currentPage);
+        writePosts(defaultPostListSize * currentPage);
     });
 
     $(".newerPostsButton").click(function()
     {
         currentPage -= 1;
-        writePosts(6 * currentPage);
+        writePosts(defaultPostListSize * currentPage);
+    });
+
+    $(".postListPagesLinks").each(function(index) {
+        $(this).on("click",function() {
+            currentPage = $(this).data('topage');
+            writePosts(defaultPostListSize * currentPage);
+        })
     });
 }
 
