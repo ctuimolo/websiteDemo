@@ -64,30 +64,114 @@ function getPost(postIndex, postID)
 
 function writePostListNavigator(startIndex) 
 {
-    var pageLinksArray = [];
-
     $(".postListNavigator").empty();
     $(".postListNavigator").append("<text>page [");
-    for(var i = 0; i <= totalPages; i++)
+    
+    if(totalPages <= 6)
     {
-     
-        if(i == currentPage)
+        for(var i = 0; i <= 6 && i <= totalPages; i++)
+        {
+            if(i == currentPage)
+            {
+                $(".postListNavigator").append(
+                    "<text class='postListPagesLinks' style='color:hotpink;text-decoration:underline' data-topage='"+i+"'>"+
+                        i +
+                    "</text>"
+                );
+            } else 
+            {
+                $(".postListNavigator").append(
+                    "<a class='postListPagesLinks' data-topage='"+i+"'>"+
+                        i +
+                    "</a>"
+                );
+            }
+        }
+    } else 
+    {
+        if(currentPage <= 3)
+        {
+            for(var i = 0; i <= 5; i++)
+            {
+                if(i == currentPage)
+                {
+                    $(".postListNavigator").append(
+                        "<text class='postListPagesLinks' style='color:hotpink;text-decoration:underline' data-topage='"+i+"'>"+
+                            i +
+                        "</text>"
+                    );
+                } else 
+                {
+                    $(".postListNavigator").append(
+                        "<a class='postListPagesLinks' data-topage='"+i+"'>"+
+                            i +
+                        "</a>"
+                    );
+                }
+            }
+            $(".postListNavigator").append(
+                "<text style='font-size:6px'>...</text><a class='postListPagesLinks' data-topage='"+totalPages+"'>"+
+                    totalPages +
+                "</a>"
+            );
+        } else if (currentPage >= 4 && currentPage < totalPages - 3) 
         {
             $(".postListNavigator").append(
-                "<a class='postListPagesLinks' style='color:hotpink' data-topage='"+i+"'>"+
-                    i +
+                "<a class='postListPagesLinks' data-topage='"+0+"'>"+
+                    0 +
+                "</a><text style='font-size:6px'>...</text>"
+            );
+            for(var i = -2; i <= 2; i++)
+            {
+                if(i == 0)
+                {
+                    $(".postListNavigator").append(
+                        "<text class='postListPagesLinks' style='color:hotpink;text-decoration:underline' data-topage='"+currentPage+"'>"+
+                            parseInt(currentPage+i) +
+                        "</text>"
+                    );
+                } else 
+                {
+                    $(".postListNavigator").append(
+                        "<a class='postListPagesLinks' data-topage='"+parseInt(currentPage+i)+"'>"+
+                            parseInt(currentPage+i) +
+                        "</a>"
+                    );
+                }
+            }
+            $(".postListNavigator").append(
+                "<text style='font-size:6px'>...</text><a class='postListPagesLinks' data-topage='"+totalPages+"'>"+
+                    totalPages +
                 "</a>"
             );
         } else 
         {
             $(".postListNavigator").append(
-                "<a class='postListPagesLinks' data-topage='"+i+"'>"+
-                    i +
-                "</a>"
+                "<a class='postListPagesLinks' data-topage='"+0+"'>"+
+                    0 +
+                "</a><text style='font-size:6px'>...</text>"
             );
-            pageLinksArray.push(i);
+            for(var i = totalPages-5; i <= totalPages; i++)
+            {
+                if(i == currentPage)
+                {
+                    $(".postListNavigator").append(
+                        "<text class='postListPagesLinks' style='color:hotpink;text-decoration:underline' data-topage='"+i+"'>"+
+                            i +
+                        "</text>"
+                    );
+                } else 
+                {
+                    $(".postListNavigator").append(
+                        "<a class='postListPagesLinks' data-topage='"+i+"'>"+
+                            i +
+                        "</a>"
+                    );
+                }
+            }
         }
     }
+
     $(".postListNavigator").append("<text>] </text>");
     $(".postListNavigator").append(
         "<button class='newerPostsButton' type='button' disabled='true' onClick='window.scrollTo(0,0);'>prev page</button>" +
@@ -103,7 +187,7 @@ function writePostListNavigator(startIndex)
         $(".newerPostsButton").removeAttr("disabled");
     }
 
-    if(startIndex + defaultPostListSize > postCount)
+    if(startIndex + defaultPostListSize >= postCount)
     {
         $(".olderPostsButton").attr("disabled","true");
     } else {
@@ -126,6 +210,7 @@ function writePostListNavigator(startIndex)
         $(this).on("click",function() {
             currentPage = $(this).data('topage');
             writePosts(defaultPostListSize * currentPage);
+            window.scrollTo(0,0);
         })
     });
 }
@@ -135,7 +220,7 @@ function writePosts(startIndex, postListSize = defaultPostListSize)
     $.getJSON("../../data/postIndex.json", function(postIndexRaw) 
     {
         postCount = postIndexRaw["postCount"];
-        totalPages = parseInt(postCount / defaultPostListSize);
+        totalPages = parseInt((postCount -1) / defaultPostListSize);
     })
 
     .then(function (postIndex) 
