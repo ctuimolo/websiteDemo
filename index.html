@@ -47,9 +47,9 @@
                     </div>
                     <div class='topRightHeaderItem'>
                         <div style='text-align: right;margin-bottom: 20px;'>
-                            <text style='text-align: right;margin-right: 20px'>gallery preview</text>
+                            <text style='text-align: right;margin-right: 20px'>ギャラリーの最新:gallery (newest)</text>
                         </div>
-                        <div class='galleryPreview'>
+                        <div class='recentGalleryPreview'>
                         </div>
                     </div>
                 </div>
@@ -78,12 +78,6 @@
 
 <!-- Local scripts -->
 <script src="./scripts/loadPosts.js" type="module"></script>
-
-<script>
-    $(window).on('hashchange',function(){ 
-        var page = window.location.hash;
-        console.log(page);
-    });
-</script>
+<script src="./scripts/loadRecentImages.js" type="module"></script>
 
 </html>

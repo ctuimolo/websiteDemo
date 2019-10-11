@@ -1,6 +1,6 @@
 {
-    "gallerySize"   : 2,
-    "gallery"  : {
+    "gallerySize"   : "15",
+    "galleryIndex"  : {
         "1" : "test.jpg",
         "2" : "ruru.jpg",
         "3" : "ruru.jpg",
@@ -13,8 +13,8 @@
         "10" : "ruru.jpg",
         "11" : "ruru.jpg",
         "12" : "ruru.jpg",
-        "13" : "ruru.jpg",
-        "14" : "ruru.jpg",
+        "13" : "test.jpg",
+        "14" : "test.jpg",
         "15" : "ruru.jpg"
     }
 }

@@ -284,6 +284,5 @@ function writePosts(startIndex, postListSize = defaultPostListSize)
 $(document).ready(function() 
 {
     writePosts(0);
-    //history.pushState({id: 'query'}, '', 'some_url_string');
 });
 
