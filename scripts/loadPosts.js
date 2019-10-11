@@ -64,19 +64,19 @@ function formatPostImage(post, imageIndex)
     var filename = post["images"][imageIndex];
     return (
         "<a class='galleryThumbnail' href='./gallery/"+ filename + "' target='_blank'>" +
-            "<img src='./gallery/thumbnails/"+ filename + "' width='150' height='150'/>" +
+            "<img src='./gallery/thumbnails/"+ filename + "' width='150' height='150' style='padding-left:6px;padding-top:6px'/>" +
         "</a>"
     )
 }
 
 function formatPostImages(post) 
 {
-    var htmlString = [];
+    var htmlString = "";
     if(post["images"] != undefined) 
     {
         for(var i = 0; i < post["images"].length; i++)
         {
-            htmlString.push(formatPostImage(post, i));
+            htmlString = htmlString.concat(formatPostImage(post, i));
         }
     }
     return htmlString;
@@ -114,6 +114,15 @@ function writePostListPagesLink(toPage, clickable)
 function writePostListNavigator(startIndex) 
 {
     $(".postListNavigator").empty();
+    $(".postListNavigator").append(
+        "<div style='float:left;padding-left:10px;'>" +
+            "<text>go to: [ </text>" +
+                "<a class='navLink' href='' target='_blank'>" +
+                    "archive" +
+                "</a>" +
+            "<text> ]</text>" +
+        "</div>"
+    );
     $(".postListNavigator").append("<text>ページ:page [");
     
     if(totalPages <= 6)

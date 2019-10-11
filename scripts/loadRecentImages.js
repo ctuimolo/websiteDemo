@@ -23,7 +23,7 @@ function writeGalleryImages() {
             );
         }
         $('.recentGalleryPreview').append(
-            "<div style='text-align:right;padding-top: 20px;padding-bottom: 10px; margin-right: 20px;'>" +
+            "<div style='text-align:right;padding-top: 20px;padding-bottom: 10px;'>" +
                 "<text>go to: [ </text>" +
                     "<a class='navLink' href='' target='_blank'>" +
                         "gallery" +

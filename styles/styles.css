@@ -3,8 +3,51 @@ body {
 }
 
 .centerContainer {
-    margin: 0 auto;
+    margin: auto;
     width: 1100px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.pageHeader {
+    text-align: center;
+}
+
+.banner {
+    width: 360px;
+    height: 120px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.headerNavBar {
+    display: table;
+    margin: auto;
+}
+
+.headerNavBarButton {
+    display: table-cell;
+    padding: 16px;
+}
+
+.headerNavBarButton * {
+    font-size: 16px;
+}
+
+.headerLink {
+    font-size: 16px;
+    font-family: "Lucida Console", Monaco, monospace;
+    color: white;
+    text-decoration: none;
+}
+
+.headerLink:hover {
+    color: hotpink;
+    text-decoration: underline;
+}
+
+.headerLink:active {
+    color: purple;
 }
 
 .topRightHeader {
@@ -17,12 +60,10 @@ body {
     margin-bottom: 20px;
     float: right;
     background-color: #181818;
-    width: 310px;
+    width: 300px;
     border-radius: 8px;
-    padding-left: 30px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-right: 20px;
+    padding: 30px;
+    margin-left: 30px;
 }
 
 .topRightHeaderTextContainer {
@@ -168,5 +209,10 @@ hr {
     color: darkgray;
     margin-top: 20px;
     margin-bottom: 20px;
-    margin-right: 10px;
+}
+
+.darkHr {
+    color: #181818;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
