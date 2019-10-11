@@ -1,6 +1,6 @@
 {
-    "gallarySize"   : 2,
-    "gallary"  : {
+    "gallerySize"   : 2,
+    "gallery"  : {
         "1" : "test.jpg",
         "2" : "ruru.jpg",
         "3" : "ruru.jpg",
