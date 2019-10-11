@@ -11,22 +11,40 @@
         <div id='postListContainer' class='postListContainer'>
 
             <div class="postList">
-
+                
                 <div class='topRightHeader'>
-                    <a class='link' href='https://twitter.com/2e_morau' target='_blank'>
-                            https://twitter.com/2e_morau
-                    </a><br/>
-                    <text>
-                        Test floating right thing here...<br/>
-                        Test floating right thing here...<br/>
-                        Test floating right thing here...<br/>
-                        Test floating right thing here...<br/>
-                        Test floating right thing here...<br/>
-                        Test floating right thing here...<br/>
-                        Test floating right thing here...<br/>
-                        Test floating right thing here...<br/>
-                        Test floating right thing here...<br/>
-                    </text>
+                    <div class='topRightHeaderItem'>
+                            <div style='text-align: right;margin-bottom: 20px;'>
+                                <text style='text-align: right;margin-right: 20px'>紹介:about</text>
+                            </div>
+                            <text>
+                                    ( ｀・∀・´)ﾉ　ｙｏｒｏｓｉｋｕ<br/><br/>
+                                    This is a site I have created for personal use and casual portfolio work.
+                            </text>
+                            <hr/>
+                            <text>
+                                    ゲームやプログラム興味あるし、ひまであれば</br>
+                                    スケッチやって見る。母語は英語だけど、<br/>
+                                    ぜひ話してくれると嬉しいです。<br/>
+                            </text>
+                        </div>
+                    <div class='topRightHeaderItem'>
+                        <div style='text-align: right;margin-bottom: 20px;'>
+                            <text style='text-align: right;margin-right: 20px'>連絡:contact</text>
+                        </div>
+                        <div class='topRightHeaderLinkContainer'>
+                            <i class='fab fa-twitter-square' style='font-size:24px;color:#1da1f2;vertical-align: middle;'></i>
+                            <a class='topRightHeaderLink' href='https://twitter.com/2e_morau' target='_blank'>
+                                @2e_morau
+                            </a><br/>
+                        </div>
+                        <div class='topRightHeaderLinkContainer'>
+                            <i class='fas fa-envelope-square' style='font-size:24px;color:darkred;vertical-align: middle;'></i>
+                            <a class='topRightHeaderLink' href='mailto:email@placeholder.url' target='_blank'>
+                                email@placeholder.url
+                            </a><br/>
+                        </div>
+                    </div>
                 </div>
 
                 <div class=postListNavigator>
@@ -42,8 +60,23 @@
     </div>
 </body>
 
-<script src="./scripts/jquery.js"></script>
-<script src="./scripts/loadPosts.js"></script>
+<!-- CDN requests -->
+<script
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/jqueryrouter@2.2.4/dist/js/jquery.router.min.js"></script>
 <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+<!-- Local scripts -->
+<script src="./scripts/loadPosts.js" type="module"></script>
+
+<script>
+    $(window).on('hashchange',function(){ 
+        var page = window.location.hash;
+        console.log(page);
+    });
+</script>
 
 </html>

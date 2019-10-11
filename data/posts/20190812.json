@@ -6,5 +6,13 @@
         "Here's the first test post. This is from a JSON file somewhere.",
         "Here's another line (testing array delimited)",
         "End of the test line. Blah blah blah bhlah blahslfjhkalakjwl faw"
+    ],
+    "images" : [
+        "ruru.jpg",
+        "test.jpg",
+        "ruru.jpg",
+        "ruru.jpg",
+        "test.jpg",
+        "ruru.jpg"
     ]
 }

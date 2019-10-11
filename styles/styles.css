@@ -9,11 +9,54 @@ body {
 
 .topRightHeader {
     float: right;
+    display: flex;
+    flex-direction: column;
+}
+
+.topRightHeaderItem {
+    margin-bottom: 20px;
+    float: right;
     background-color: #181818;
-    padding: 40px;
-    width: 280px;
-    height: 400px;
+    width: 310px;
     border-radius: 8px;
+    padding-left: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+}
+
+.topRightHeaderTextContainer {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.topRightHeaderText {
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.topRightHeaderLinkContainer {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.topRightHeaderLink {
+    font-size: 14px;
+    font-family: "Lucida Console", Monaco, monospace;
+    vertical-align: middle;
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.topRightHeaderLink:hover {
+    color: hotpink;
+    text-decoration: underline;
+}
+
+.topRightHeaderLink:active {
+    color: purple;
 }
 
 .postListNavigator {
@@ -51,10 +94,12 @@ body {
 .postBody {
     width: 650px;
     margin: 20px;
+    padding-top: 20px;
     padding-bottom: 20px;
 }
 
 .postID {
+    margin-top: 30px;
     text-align: right;
 }
 
@@ -92,24 +137,15 @@ button:disabled {
 
 .postListPagesLinks:hover {
     color: hotpink; 
+    cursor: pointer;
 }
 
 .postListPagesLinks:active {
     color: purple; 
 }
 
-
-a:visited {
-    color: hotpink
-}
-
-a:active {
-    color: purple;
-}
-
-a:hover {
-    color: purple;
-    cursor: pointer;
+.gallaryThumbnail {
+    text-decoration: none;
 }
 
 text {
@@ -120,6 +156,7 @@ text {
 
 hr {
     color: darkgray;
-    margin: 10px;
-    margin-bottom: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 10px;
 }

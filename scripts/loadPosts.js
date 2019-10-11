@@ -1,7 +1,3 @@
-// this is the current post count from Post Index
-
-var params = $("script[src*='./scripts/loadPosts.js']");
-
 var postCount = 0;
 var posts = [];
 var postListPromises = [];
@@ -63,12 +59,35 @@ function formatPostID(post)
     )
 }
 
+function formatPostImage(post, imageIndex) 
+{
+    var filename = post["images"][imageIndex];
+    return (
+        "<a class='gallaryThumbnail' href='./gallary/"+ filename + "' target='_blank'>" +
+            "<img src='./gallary/thumbnails/"+ filename + "' width='150' height='150'/>" +
+        "</a>"
+    )
+}
+
+function formatPostImages(post) 
+{
+    var htmlString = [];
+    if(post["images"] != undefined) 
+    {
+        for(var i = 0; i < post["images"].length; i++)
+        {
+            htmlString.push(formatPostImage(post, i));
+        }
+    }
+    return htmlString;
+}
+
 function getPost(postIndex, postID)
 {
     var request = $.getJSON("../../data/posts/"+postIndex["posts"][postID]+".json", function(post) 
     {
         posts[postIndex["postCount"]-postID] = post;
-    })
+    });
 
     return request;
 }
@@ -246,6 +265,7 @@ function writePosts(startIndex, postListSize = defaultPostListSize)
                             formatPostTitle(posts[i+startIndex])+
                             formatPostDate(posts[i+startIndex])+
                             formatPostBody(posts[i+startIndex])+
+                            formatPostImages(posts[i+startIndex])+
                             formatPostID(posts[i+startIndex])+
                         "</div>"
                     );
@@ -264,5 +284,6 @@ function writePosts(startIndex, postListSize = defaultPostListSize)
 $(document).ready(function() 
 {
     writePosts(0);
+    //history.pushState({id: 'query'}, '', 'some_url_string');
 });
 
