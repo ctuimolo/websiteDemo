@@ -1,5 +1,6 @@
 body {
     background-color: #0b0b0b;
+    height: 1000px;
 }
 
 .centerContainer {
@@ -16,8 +17,8 @@ body {
 .banner {
     width: 360px;
     height: 120px;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
 
 .headerNavBar {
@@ -106,8 +107,17 @@ body {
     padding-right:20px;
     margin-top: 20px;
     width: 690px;
+    height: 24px;
     border-radius: 8px;
     text-align: right;
+}
+
+.postListNavigatorItems {
+    display: inline-block;
+}
+
+.postListNavigatorItems * {
+    display: inline-block;
 }
 
 .navLink {

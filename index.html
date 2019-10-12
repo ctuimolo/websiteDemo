@@ -78,13 +78,22 @@
                     </div>
                 </div>
 
-                <div class=postListNavigator>
+                <div class='postListNavigator'>
+                    <div style='float:left;padding-left:10px;'><text>go to: [ </text><a class='navLink' href='' target='_blank'>archive</a><text> ]</text></div>
+                    <div class='postListNavigatorItems'>
+                        <text>ページ:page [</text><div class='postListNavigatorLinks'></div><text>]</text>
+                        <button class='newerPostsButton' type='button' disabled='true' onClick='window.scrollTo(0,0);'>< 進</button>
+                        <button class='olderPostsButton' type='button' disabled='true' onClick='window.scrollTo(0,0);'>遡 ></button>
+                    </div>
                 </div>
 
                 <div id='postListBody' class='postListBody'>
                 </div>
                 
                 <div class=postListNavigator>
+                    <div style='float:left;padding-left:10px;'>
+                        <text>go to: [ </text><a class='navLink' href='' target='_blank'>archive</a><text> ]</text>
+                    </div>
                 </div>
             </div>
         </div>
