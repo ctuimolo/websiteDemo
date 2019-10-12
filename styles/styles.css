@@ -28,7 +28,10 @@ body {
 
 .headerNavBarButton {
     display: table-cell;
-    padding: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 16px;
+
 }
 
 .headerNavBarButton * {
@@ -64,6 +67,7 @@ body {
     width: 300px;
     border-radius: 8px;
     padding: 30px;
+    padding-bottom: 20px;
     margin-left: 30px;
 }
 
@@ -123,13 +127,14 @@ body {
 .navLink {
     font-size: 12px;
     font-family: "Lucida Console", Monaco, monospace;
-    color: white;
+    color: white; 
     text-decoration: none;
 }
 
 .navLink:hover {
     color: hotpink;
     text-decoration: underline;
+    cursor: pointer;
 }
 
 .navLink:active {
@@ -159,7 +164,7 @@ body {
 }
 
 .postBody {
-    width: 650px;
+    width: 640px;
     margin: 20px;
     padding-top: 20px;
     padding-bottom: 20px;

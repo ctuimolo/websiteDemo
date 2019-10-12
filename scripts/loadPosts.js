@@ -193,7 +193,7 @@ function writePostListNavigator()
     // manage active buttons dependant on currentPage
     if(currentPage == 0)
     {
-        $(".newerPostsButton").attr("disabled","true");
+        $(".newerPostsButton").attr("disabled","true"); 
     }else if(currentPage > 0)
     {
         $(".newerPostsButton").removeAttr("disabled");
@@ -214,6 +214,20 @@ function writePostListNavigator()
     $(".newerPostsButton").click(function()
     {
         changeURLWritePosts(currentPage - 1);
+    });
+
+    $("#toBottomButton").click(function()
+    {
+        $('html, body').animate({
+            scrollTop: $("#bottom").offset().top
+        }, 600);
+    });
+
+    $("#toTopButton").click(function()
+    {
+        $('html, body').animate({
+            scrollTop: $("body").offset().top
+        }, 500);
     });
 
     $(".postListPagesLinks").each(function(index) {
@@ -264,7 +278,7 @@ function writePosts(startPage)
                 if(posts[i+(currentPage*defaultPostListSize)] != null) 
                 {
                     $("#postListBody").append(
-                        "<div class='post'>" +
+                        "<div class='post' id='"+parseInt(getPostID(posts[i+(currentPage*defaultPostListSize)]))+"'>" +
                             //"<text>===== POST #"+(i+startIndex)+" === ID: "+getPostID(posts[i+startIndex])+" ====="+"</text>"+
                             formatPostTitle(posts[i+(currentPage*defaultPostListSize)])+
                             formatPostDate(posts[i+(currentPage*defaultPostListSize)])+

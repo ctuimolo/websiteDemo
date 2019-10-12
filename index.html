@@ -13,23 +13,35 @@
             <ul class='headerNavBar'>
                 <li class='headerNavBarButton'>
                     <text>[&nbsp</text>
-                        <a class='headerLink' href='' target='_blank'>ホーム:home</a>
+                        <a class='headerLink' href='/'>ホーム:home</a>
                     <text>&nbsp]</text>
                 </li>
                 <li class='headerNavBarButton'>
                     <text>[&nbsp</text>
-                        <a class='headerLink' href='' target='_blank'>ギャラリー:gallery</a>
+                        <a class='headerLink' href='/'>ギャラリー:gallery</a>
                     <text>&nbsp]</text>
                 </li>
                 <li class='headerNavBarButton'>
                     <text>[&nbsp</text>
-                        <a class='headerLink' href='' target='_blank'>アーカイブ:archive</a>
+                        <a class='headerLink' href='/'>漫画:comic</a>
+                    <text>&nbsp]</text>
+                </li>
+            </ul>
+            <ul class='headerNavBar'>
+                <li class='headerNavBarButton'>
+                    <text>[&nbsp</text>
+                        <a class='headerLink' href='/'>アーカイブ:archive</a>
                     <text>&nbsp]</text>
                 </li>
                 <li class='headerNavBarButton'>
                     <text>[&nbsp</text>
-                        <a class='headerLink' href='' target='_blank'>連絡:contact</a>
-                    <text>&nbsp;]</text>
+                        <a class='headerLink' href='/'>ダウンロード:downloads</a>
+                    <text>&nbsp]</text>
+                </li>
+                <li class='headerNavBarButton'>
+                    <text>[&nbsp</text>
+                        <a class='headerLink' href='/'>連絡:contact</a>
+                    <text>&nbsp]</text>
                 </li>
             </ul>
         </div>
@@ -39,7 +51,7 @@
                 <div class='topRightHeader'>
                     <div class='topRightHeaderItem'>
                             <div style='text-align: right;margin-bottom: 20px;'>
-                                <text style='text-align: right;'>紹介:about</text>
+                                <text style='text-align: right;'>紹介:intro</text>
                             </div>
                             <text>
                                     ( ｀・∀・´)ﾉ　ｙｏｒｏｓｉｋｕ<br/><br/>
@@ -49,25 +61,34 @@
                             <text>
                                     ゲームやプログラム興味あるし、ひまであれば</br>
                                     スケッチやって見る。母語は英語だけど、<br/>
-                                    ぜひ話してくれると嬉しいです。<br/>
+                                    ぜひ話してくれると嬉しいです。<br/><br/>
                             </text>
+                            <div class='topRightHeaderLinkContainer'>
+                                <i class='fab fa-twitter-square' style='font-size:24px;color:#1da1f2;vertical-align: middle;'></i>
+                                <a class='topRightHeaderLink' href='https://twitter.com/2e_morau' target='_blank'>
+                                    @2e_morau
+                                </a><br/>
+                            </div>
+                            <div class='topRightHeaderLinkContainer'>
+                                <i class='fas fa-envelope-square' style='font-size:24px;color:darkred;vertical-align: middle;'></i>
+                                <a class='topRightHeaderLink' href='mailto:email@placeholder.url' target='_blank'>
+                                    email@placeholder.url
+                                </a><br/>
+                            </div>
                         </div>
                     <div class='topRightHeaderItem'>
                         <div style='text-align: right;margin-bottom: 20px;'>
-                            <text style='text-align: right;'>連絡:contact</text>
+                            <text style='text-align: right;'>更新暦:updates (newest)</text>
                         </div>
-                        <div class='topRightHeaderLinkContainer'>
-                            <i class='fab fa-twitter-square' style='font-size:24px;color:#1da1f2;vertical-align: middle;'></i>
-                            <a class='topRightHeaderLink' href='https://twitter.com/2e_morau' target='_blank'>
-                                @2e_morau
-                            </a><br/>
+                        <div class='archivePreview'>
                         </div>
-                        <div class='topRightHeaderLinkContainer'>
-                            <i class='fas fa-envelope-square' style='font-size:24px;color:darkred;vertical-align: middle;'></i>
-                            <a class='topRightHeaderLink' href='mailto:email@placeholder.url' target='_blank'>
-                                email@placeholder.url
-                            </a><br/>
-                        </div>
+                        <div style='text-align:right;padding-top: 20px;padding-bottom: 10px;'>
+                            <text>go to: [ </text>
+                                <a class='navLink' href='/'>
+                                    アーカイブ:archive
+                                </a>
+                            <text> ]</text>
+                        </div> 
                     </div>
                     <div class='topRightHeaderItem'>
                         <div style='text-align: right;margin-bottom: 20px;'>
@@ -75,11 +96,18 @@
                         </div>
                         <div class='recentGalleryPreview'>
                         </div>
+                        <div style='text-align:right;padding-top: 20px;padding-bottom: 10px;'>
+                            <text>go to: [ </text>
+                                <a class='navLink' href='/'>
+                                    ギャラリー:gallery
+                                </a>
+                            <text> ]</text>
+                        </div> 
                     </div>
                 </div>
 
-                <div class='postListNavigator'>
-                    <div style='float:left;padding-left:10px;'><text>go to: [ </text><a class='navLink' href='' target='_blank'>archive</a><text> ]</text></div>
+                <div class='postListNavigator' id='top'>
+                    <div style='float:left;padding-left:10px;'><text>go to: [ </text><a class='navLink' id='toBottomButton'>下部:bottom</a><text> ]</text></div>
                     <div class='postListNavigatorItems'>
                         <text>ページ:page [</text><div class='postListNavigatorLinks'></div><text>]</text>
                         <button class='newerPostsButton' type='button' disabled='true' onClick='window.scrollTo(0,0);'>< 進</button>
@@ -90,9 +118,12 @@
                 <div id='postListBody' class='postListBody'>
                 </div>
                 
-                <div class=postListNavigator>
-                    <div style='float:left;padding-left:10px;'>
-                        <text>go to: [ </text><a class='navLink' href='' target='_blank'>archive</a><text> ]</text>
+                <div class='postListNavigator' id='bottom'>
+                    <div style='float:left;padding-left:10px;'><text>go to: [ </text><a class='navLink' id='toTopButton'>上部:top</a><text> ]</text></div>
+                    <div class='postListNavigatorItems'>
+                        <text>ページ:page [</text><div class='postListNavigatorLinks'></div><text>]</text>
+                        <button class='newerPostsButton' type='button' disabled='true' onClick='window.scrollTo(0,0);'>< 進</button>
+                        <button class='olderPostsButton' type='button' disabled='true' onClick='window.scrollTo(0,0);'>遡 ></button>
                     </div>
                 </div>
             </div>

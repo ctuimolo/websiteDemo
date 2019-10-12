@@ -1,7 +1,7 @@
 {
     "title" : "Test Post (title)", 
     "date"  : "2019-08-12",
-    "ID"    : "1",
+    "ID"    : "001",
     "body"  : [
         "Here's the first test post. This is from a JSON file somewhere.",
         "Here's another line (testing array delimited)",
