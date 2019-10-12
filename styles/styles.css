@@ -6,7 +6,6 @@ body {
 .centerContainer {
     margin: auto;
     width: 1100px;
-    padding-top: 20px;
     padding-bottom: 20px;
 }
 
@@ -15,10 +14,10 @@ body {
 }
 
 .banner {
-    width: 360px;
-    height: 120px;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    width: 600px;
+    height: 80px;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 .headerNavBar {
