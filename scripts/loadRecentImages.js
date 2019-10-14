@@ -17,8 +17,8 @@ function writeGalleryImages() {
         {
             var filename = galleryIndex[gallerySize-i];
             $('.recentGalleryPreview').append(
-                "<a class='galleryThumbnail' href='./gallery/"+ filename + "' target='_blank'>" +
-                    "<img src='./gallery/thumbnails/"+ filename + "' width='140' height='140' style='padding-left:6px;padding-top:3px'/>" +
+                "<a href='./gallery/"+ filename + "' target='_blank' style='margin-left: 3px; float: left; box-sizing:border-box;'>" +
+                    "<img class='galleryThumbnail' src='./gallery/thumbnails/"+ filename + "' width='142' height='142' style=''/>" +
                 "</a>"
             );
         }

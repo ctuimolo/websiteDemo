@@ -68,8 +68,8 @@ function formatPostImage(post, imageIndex)
 {
     var filename = post["images"][imageIndex];
     return (
-        "<a class='galleryThumbnail' href='./gallery/"+ filename + "' target='_blank'>" +
-            "<img src='./gallery/thumbnails/"+ filename + "' width='150' height='150' style='padding-left:6px;padding-top:6px'/>" +
+        "<a href='./gallery/"+ filename + "' target='_blank' style='margin-left: 3px;'>" +
+            "<img class='galleryThumbnail' src='./gallery/thumbnails/"+ filename + "' width='150' height='150'/>" +
         "</a>"
     )
 }
@@ -118,6 +118,7 @@ function writePostListPagesLink(toPage, clickable)
 
 function writePostListNavigator() 
 {
+    $(".postListNavigatorLinks").empty();
     if(totalPages <= 6)
     {
         for(var i = 0; i <= 6 && i <= totalPages; i++)
@@ -270,7 +271,6 @@ function writePosts(startPage)
 
         $.when.apply(null, postListPromises).done(function() 
         {
-
             writePostListNavigator();
             $("#postListBody").empty();
             for(var i = 0; i < defaultPostListSize; i++)

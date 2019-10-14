@@ -30,7 +30,6 @@ body {
     padding-left: 16px;
     padding-right: 16px;
     padding-bottom: 16px;
-
 }
 
 .headerNavBarButton * {
@@ -64,7 +63,7 @@ body {
     float: right;
     background-color: #181818;
     width: 300px;
-    border-radius: 8px;
+    border-radius: 4px;
     padding: 30px;
     padding-bottom: 20px;
     margin-left: 30px;
@@ -111,7 +110,7 @@ body {
     margin-top: 20px;
     width: 690px;
     height: 24px;
-    border-radius: 8px;
+    border-radius: 4px;
     text-align: right;
 }
 
@@ -136,6 +135,10 @@ body {
     cursor: pointer;
 }
 
+.navLink:hover * {
+    color: hotpink;
+}
+
 .navLink:active {
     color: purple;
 }
@@ -148,7 +151,7 @@ body {
     padding-bottom: 20px;
     margin-top: 20px;
     width: 680px;
-    border-radius: 8px;
+    border-radius: 4px;
 }
 
 .postTitle {
@@ -209,8 +212,17 @@ button:disabled {
     color: purple; 
 }
 
-.gallaryThumbnail {
-    text-decoration: none;
+.hoverPink {
+    float: left;
+    background-color: hotpink;
+}
+
+.galleryThumbnail {
+    transition:  0.5s;
+}
+
+.galleryThumbnail:hover {
+    filter: opacity(50%);
 }
 
 text {
@@ -220,9 +232,17 @@ text {
 }
 
 hr {
-    color: darkgray;
+    color: #333333;
     margin-top: 20px;
     margin-bottom: 20px;
+}
+
+.hrSubtle {
+    color: #333333;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
 .darkHr {

@@ -43,32 +43,46 @@
                 
                 <div class='topRightHeader'>
                     <div class='topRightHeaderItem'>
-                            <div style='text-align: right;margin-bottom: 20px;'>
-                                <text style='text-align: right;'>紹介:intro</text>
-                            </div>
-                            <text>
-                                    ( ｀・∀・´)ﾉ　ｙｏｒｏｓｉｋｕ<br/><br/>
-                                    This is a site I have created for personal use and casual portfolio work.
-                            </text>
-                            <hr/>
-                            <text>
-                                    ゲームやプログラム興味あるし、ひまであれば</br>
-                                    スケッチやって見る。母語は英語だけど、<br/>
-                                    ぜひ話してくれると嬉しいです。<br/><br/>
-                            </text>
-                            <div class='topRightHeaderLinkContainer'>
-                                <i class='fab fa-twitter-square' style='font-size:24px;color:#1da1f2;vertical-align: middle;'></i>
-                                <a class='topRightHeaderLink' href='https://twitter.com/2e_morau' target='_blank'>
-                                    @2e_morau
-                                </a><br/>
-                            </div>
-                            <div class='topRightHeaderLinkContainer'>
-                                <i class='fas fa-envelope-square' style='font-size:24px;color:darkred;vertical-align: middle;'></i>
-                                <a class='topRightHeaderLink' href='mailto:email@placeholder.url' target='_blank'>
-                                    email@placeholder.url
-                                </a><br/>
-                            </div>
+                        <div style='text-align: right;margin-bottom: 20px;'>
+                            <text style='text-align: right;'>紹介:intro</text>
                         </div>
+                        <text>
+                                ( ｀・∀・´)ﾉ　ｙｏｒｏｓｉｋｕ<br/><br/>
+                                This is a site I have built for personal use and casual posting.
+                        </text>
+                        <hr/>
+                        <text>
+                                ゲームやプログラム興味あるし、ひまであれば</br>
+                                スケッチやって見る。母語は英語だけど、<br/>
+                                ぜひ話してくれると嬉しいです。<br/><br/>
+                        </text>
+                        <div class='topRightHeaderLinkContainer'>
+                            <i class='fab fa-twitter-square' style='font-size:24px;color:#1da1f2;vertical-align: middle;'></i>
+                            <a class='topRightHeaderLink' href='https://twitter.com/2e_morau' target='_blank'>
+                                @2e_morau
+                            </a><br/>
+                        </div>
+                        <div class='topRightHeaderLinkContainer'>
+                            <i class='fas fa-envelope-square' style='font-size:24px;color:darkred;vertical-align: middle;'></i>
+                            <a class='topRightHeaderLink' href='mailto:email@placeholder.url' target='_blank'>
+                                email@placeholder.url
+                            </a><br/>
+                        </div>
+                    </div>
+                    <div class='topRightHeaderItem'>
+                        <div style='text-align: right;margin-bottom: 20px;'>
+                            <text style='text-align: right;'>ギャラリーの最新:gallery (newest)</text>
+                        </div>
+                        <div class='recentGalleryPreview'>
+                        </div>
+                        <div style='text-align:right;padding-top: 20px;padding-bottom: 10px;margin-top:460px'>
+                            <text>go to: [ </text>
+                                <a class='navLink' href='/'>
+                                    ギャラリー:gallery
+                                </a>
+                            <text> ]</text>
+                        </div> 
+                    </div>
                     <div class='topRightHeaderItem'>
                         <div style='text-align: right;margin-bottom: 20px;'>
                             <text style='text-align: right;'>更新暦:updates (newest)</text>
@@ -83,26 +97,12 @@
                             <text> ]</text>
                         </div> 
                     </div>
-                    <div class='topRightHeaderItem'>
-                        <div style='text-align: right;margin-bottom: 20px;'>
-                            <text style='text-align: right;'>ギャラリーの最新:gallery (newest)</text>
-                        </div>
-                        <div class='recentGalleryPreview'>
-                        </div>
-                        <div style='text-align:right;padding-top: 20px;padding-bottom: 10px;'>
-                            <text>go to: [ </text>
-                                <a class='navLink' href='/'>
-                                    ギャラリー:gallery
-                                </a>
-                            <text> ]</text>
-                        </div> 
-                    </div>
                 </div>
 
                 <div class='postListNavigator' id='top'>
                     <div style='float:left;padding-left:10px;'><text>go to: [ </text><a class='navLink' id='toBottomButton'>下部:bottom</a><text> ]</text></div>
                     <div class='postListNavigatorItems'>
-                        <text>ページ:page [</text><div class='postListNavigatorLinks'></div><text>]</text>
+                        <text>ページ:page [</text><div class='postListNavigatorLinks'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div><text>]</text>
                         <button class='newerPostsButton' type='button' disabled='true' onClick='window.scrollTo(0,0);'>< 進</button>
                         <button class='olderPostsButton' type='button' disabled='true' onClick='window.scrollTo(0,0);'>遡 ></button>
                     </div>
@@ -136,5 +136,6 @@
 <!-- Local scripts -->
 <script src="./scripts/loadPosts.js" type="module"></script>
 <script src="./scripts/loadRecentImages.js" type="module"></script>
+<script src="./scripts/loadArchivePreview.js" type="module"></script>
 
 </html>
