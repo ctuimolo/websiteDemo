@@ -52,40 +52,39 @@ body {
     color: purple;
 }
 
-.topRightHeader {
-    float: right;
+.topLeftHeader {
+    float: left;
     display: flex;
     flex-direction: column;
+    margin-top: 20px;
 }
 
-.topRightHeaderItem {
+.topLeftHeaderItem {
     margin-bottom: 20px;
-    float: right;
     background-color: #181818;
     width: 300px;
     border-radius: 4px;
     padding: 30px;
     padding-bottom: 20px;
-    margin-left: 30px;
 }
 
-.topRightHeaderTextContainer {
+.topLeftHeaderTextContainer {
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
-.topRightHeaderText {
+.topLeftHeaderText {
     font-family: "Lucida Console", Monaco, monospace;
     font-size: 14px;
     margin-left: 10px;
 }
 
-.topRightHeaderLinkContainer {
+.topLeftHeaderLinkContainer {
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
-.topRightHeaderLink {
+.topLeftHeaderLink {
     font-size: 14px;
     font-family: "Lucida Console", Monaco, monospace;
     vertical-align: middle;
@@ -94,13 +93,17 @@ body {
     margin-left: 10px;
 }
 
-.topRightHeaderLink:hover {
+.topLeftHeaderLink:hover {
     color: hotpink;
     text-decoration: underline;
 }
 
-.topRightHeaderLink:active {
+.topLeftHeaderLink:active {
     color: purple;
+}
+
+.postListContainer {
+    margin-left: 380px;
 }
 
 .postListNavigator {
