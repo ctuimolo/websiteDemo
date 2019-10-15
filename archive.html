@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="./styles/styles-archive.css">
+</head>
+
+<body>
+    <div class='centerContainer'>
+        <div class='pageHeader'>
+            <a href='/'>
+                <img class='banner' src='./images/banner.png'></img>
+            </a>
+            <br/>
+            <ul class='headerNavBar'>
+                <li class='headerNavBarButton'>
+                    <text>[&nbsp</text>
+                        <a class='headerLink' href='/'>ホーム:home</a>
+                    <text>&nbsp]</text>
+                </li>
+                <li class='headerNavBarButton'>
+                    <text>[&nbsp</text>
+                        <a class='headerLink' href='/'>漫画:comic</a>
+                    <text>&nbsp]</text>
+                </li>
+                <li class='headerNavBarButton'>
+                    <text>[&nbsp</text>
+                        <a class='headerLink' href='/'>ギャラリー:gallery</a>
+                    <text>&nbsp]</text>
+                </li>
+                <li class='headerNavBarButton'>
+                    <text>[&nbsp</text>
+                        <a class='headerLink' href='/archive'>アーカイブ:archive</a>
+                    <text>&nbsp]</text>
+                </li>
+                <li class='headerNavBarButton'>
+                    <text>[&nbsp</text>
+                        <a class='headerLink' href='/'>連絡:contact</a>
+                    <text>&nbsp]</text>
+                </li>
+            </ul>
+        </div>
+
+        <div class='archiveListContainer'>
+            <div class='archiveListNavigator' id='top'>
+                <div style='float:left;padding-left:10px;'><text>go to: [ </text><a class='navLink' id='toBottomButton'>下部:bottom</a><text> ]</text></div>
+                <div class='archiveListNavigatorItems'>
+                    <text>ページ:page [</text><div class='archiveListNavigatorLinks'></div><text>]</text>
+                    <button class='newerarchiveEntriesButton' type='button' disabled='true' onClick='window.scrollTo(0,0);'>< 進</button>
+                    <button class='olderarchiveEntriesButton' type='button' disabled='true' onClick='window.scrollTo(0,0);'>遡 ></button>
+                </div>
+            </div>
+            <div id='archiveListBody' class='archiveListBody'>
+            </div>
+            <div class='archiveListNavigator' id='bottom'>
+                <div style='float:left;padding-left:10px;'><text>go to: [ </text><a class='navLink' id='toTopButton'>上部:top</a><text> ]</text></div>
+                <div class='archiveListNavigatorItems'>
+                    <text>ページ:page [</text><div class='archiveListNavigatorLinks'></div><text>]</text>
+                    <button class='newerarchiveEntriesButton' type='button' disabled='true' onClick='window.scrollTo(0,0);'>< 進</button>
+                    <button class='olderarchiveEntriesButton' type='button' disabled='true' onClick='window.scrollTo(0,0);'>遡 ></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<!-- CDN requests -->
+<script
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous">
+</script>
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+<!-- Local scripts -->
+<script src="./scripts/loadArchive.js" type="module"></script>
+</html>

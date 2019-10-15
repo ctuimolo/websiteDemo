@@ -6,12 +6,20 @@ var startPage = 0;
 var currentPage = 0;
 var totalPages = 0;
 var navBarSize = 5;
+var jumpToAnchor = undefined;
 //var startIndex = parseInt(params.attr('startIndex'));
 //var startIndex = 0;
 
 $.urlParam = function(name) {
-	var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
-	return results[1] || 0;
+    var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+    if(results) 
+        return results[1];
+    return undefined;
+}
+
+$.urlAnchor = function() {
+	var hash = $(location).attr('hash');
+	return hash;
 }
 
 function getPostID(post)
@@ -278,7 +286,7 @@ function writePosts(startPage)
                 if(posts[i+(currentPage*defaultPostListSize)] != null) 
                 {
                     $("#postListBody").append(
-                        "<div class='post' id='"+parseInt(getPostID(posts[i+(currentPage*defaultPostListSize)]))+"'>" +
+                        "<div class='post' id='"+getPostID(posts[i+(currentPage*defaultPostListSize)])+"'>" +
                             //"<text>===== POST #"+(i+startIndex)+" === ID: "+getPostID(posts[i+startIndex])+" ====="+"</text>"+
                             formatPostTitle(posts[i+(currentPage*defaultPostListSize)])+
                             formatPostDate(posts[i+(currentPage*defaultPostListSize)])+
@@ -295,18 +303,25 @@ function writePosts(startPage)
                     );*/
                 };
             }
+            if(jumpToAnchor != undefined) 
+            {
+                $(jumpToAnchor).addClass('fadePink');
+                $(document).scrollTop( $(jumpToAnchor).offset().top ); 
+                $('body').addClass('hashPostLoaded');
+            }
         })
     });
 }
 
+$(window).on('hashchange', function(){
+    location.reload();
+});
+
 $(document).ready(function() 
 {
-    try { 
-        var p = $.urlParam('p') 
-    } catch (err) {
-        // p is undefined
-    }
-    
+    var p = $.urlParam('p') 
+    jumpToAnchor = $.urlAnchor();
+
     if(p != undefined) 
     {
         writePosts(parseInt(p));

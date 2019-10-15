@@ -9,16 +9,13 @@
 <body>
     <div class='centerContainer'>
         <div class='pageHeader'>
-            <img class='banner' src='./images/banner.png'></img><br/>
+            <a href='/'>
+                <img class='banner' src='./images/banner.png'></img>
+            </a>
             <ul class='headerNavBar'>
                 <li class='headerNavBarButton'>
                     <text>[&nbsp</text>
                         <a class='headerLink' href='/'>ホーム:home</a>
-                    <text>&nbsp]</text>
-                </li>
-                <li class='headerNavBarButton'>
-                    <text>[&nbsp</text>
-                        <a class='headerLink' href='/'>ギャラリー:gallery</a>
                     <text>&nbsp]</text>
                 </li>
                 <li class='headerNavBarButton'>
@@ -28,7 +25,12 @@
                 </li>
                 <li class='headerNavBarButton'>
                     <text>[&nbsp</text>
-                        <a class='headerLink' href='/'>アーカイブ:archive</a>
+                        <a class='headerLink' href='/'>ギャラリー:gallery</a>
+                    <text>&nbsp]</text>
+                </li>
+                <li class='headerNavBarButton'>
+                    <text>[&nbsp</text>
+                        <a class='headerLink' href='/archive'>アーカイブ:archive</a>
                     <text>&nbsp]</text>
                 </li>
                 <li class='headerNavBarButton'>
@@ -82,13 +84,13 @@
                 </div>
                 <div class='topLeftHeaderItem'>
                     <div style='text-align: right;margin-bottom: 20px;'>
-                        <text style='text-align: right;'>更新暦:updates (newest)</text>
+                        <text style='text-align: right;'>更新暦:update history</text>
                     </div>
                     <div class='archivePreview'>
                     </div>
                     <div style='text-align:right;padding-top: 20px;padding-bottom: 10px;'>
                         <text>go to: [ </text>
-                            <a class='navLink' href='/'>
+                            <a class='navLink' href='/archive'>
                                 アーカイブ:archive
                             </a>
                         <text> ]</text>
@@ -99,12 +101,10 @@
             
             <div class="postList">
                 
-                
-
                 <div class='postListNavigator' id='top'>
                     <div style='float:left;padding-left:10px;'><text>go to: [ </text><a class='navLink' id='toBottomButton'>下部:bottom</a><text> ]</text></div>
                     <div class='postListNavigatorItems'>
-                        <text>ページ:page [</text><div class='postListNavigatorLinks'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div><text>]</text>
+                        <text>ページ:page [</text><div class='postListNavigatorLinks'></div><text>]</text>
                         <button class='newerPostsButton' type='button' disabled='true' onClick='window.scrollTo(0,0);'>< 進</button>
                         <button class='olderPostsButton' type='button' disabled='true' onClick='window.scrollTo(0,0);'>遡 ></button>
                     </div>
@@ -132,7 +132,6 @@
     integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous">
 </script>
-<script src="https://cdn.jsdelivr.net/npm/jqueryrouter@2.2.4/dist/js/jquery.router.min.js"></script>
 <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 
 <!-- Local scripts -->

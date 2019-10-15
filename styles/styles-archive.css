@@ -1,0 +1,76 @@
+.archiveListContainer {
+    margin:auto;
+    width: 900px;
+    margin-top: 10px;
+}
+
+.archiveListBody {
+    background-color: #181818;
+    border-radius: 4px;
+    padding-bottom: 4px;
+}
+
+.archiveListNavigator {
+    background-color: #181818;
+    padding: 10px;
+    padding-right:20px;
+    margin-top: 20px;
+    width: 870px;
+    height: 24px;
+    border-radius: 4px;
+    text-align: right;
+}
+
+.archiveListNavigatorItems {
+    display: inline-block;
+}
+
+.archiveListNavigatorItems * {
+    display: inline-block;
+}
+
+.archiveListPagesLinks {
+    font-size: 13px;
+    font-family: "Lucida Console", Monaco, monospace;
+    padding-left: 4px;
+    padding-right: 4px;
+    color: white;
+}
+
+.archiveLine * {
+    font-size: 14px;
+}
+
+.archiveListPagesLinks:hover {
+    color: hotpink; 
+    cursor: pointer;
+}
+
+.archiveListPagesLinks:active {
+    color: purple; 
+}
+
+.archiveEntry {
+    width: 800px;
+    padding-bottom: 10px;
+    padding-top: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.archiveLinkContainer {
+    margin-left: 40px;
+    padding-top: 20px;
+}
+
+.archiveLink {
+    font-size: 13px;
+    color: hotpink;
+    font-family: "Lucida Console", Monaco, monospace;
+    text-decoration: none;
+}
+
+.archiveLink:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}

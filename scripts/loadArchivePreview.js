@@ -7,9 +7,14 @@ var defaultArchivePreviewSize = 10;
 function getPostPageURLString(post, postFromIndex) 
 {
     var page = parseInt(postFromIndex / defaultPostListSize);
-    var ID = parseInt(post["ID"]);
+    var ID = post["ID"];
 
     return "/?p="+page+"#"+ID;
+}
+
+function formatPostID(post)
+{
+    return post["ID"].padStart(5,'0');
 }
 
 function getPost(postIndex, postKey, destinationIndex)

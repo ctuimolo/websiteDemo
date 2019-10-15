@@ -16,12 +16,11 @@ body {
 .banner {
     width: 600px;
     height: 80px;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .headerNavBar {
-    display: table;
     margin: auto;
 }
 
@@ -246,6 +245,15 @@ hr {
     margin-bottom: 12px;
     margin-right: 10px;
     margin-left: 10px;
+}
+
+.fadePink {
+    background-color: hotpink;
+    transition: 500ms;
+}
+
+body.hashPostLoaded .fadePink {
+    background-color: #181818;
 }
 
 .darkHr {
