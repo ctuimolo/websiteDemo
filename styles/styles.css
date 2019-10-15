@@ -11,6 +11,9 @@ body {
 
 .pageHeader {
     text-align: center;
+    height: 180px;
+    margin: auto;
+    width: 1000px;
 }
 
 .banner {
@@ -22,10 +25,13 @@ body {
 
 .headerNavBar {
     margin: auto;
+    width: 800px;
+    text-align: center;
+    list-style: none;
 }
 
 .headerNavBarButton {
-    display: table-cell;
+    display: inline;
     padding-left: 16px;
     padding-right: 16px;
     padding-bottom: 16px;
