@@ -76,8 +76,8 @@ function formatPostImage(post, imageIndex)
 {
     var filename = post["images"][imageIndex];
     return (
-        "<a href='./gallery/"+ filename + "' target='_blank' style='margin-left: 3px;'>" +
-            "<img class='galleryThumbnail' src='./gallery/thumbnails/"+ filename + "' width='150' height='150'/>" +
+        "<a href='./galleryData/"+ filename + "' target='_blank' style='margin-left: 3px;'>" +
+            "<img class='galleryThumbnail' src='./galleryData/thumbnails/"+ filename + "' width='150' height='150'/>" +
         "</a>"
     )
 }

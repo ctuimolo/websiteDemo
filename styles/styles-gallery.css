@@ -1,0 +1,14 @@
+.galleryContainer {
+    width: 1100px;
+    margin: auto;
+}
+
+.galleryBody {
+    background-color: #181818;
+    width: 1100px;
+    height: 700px;
+    margin-top: 20px;
+    border-radius: 4px;
+    text-align: center;
+    padding-top: 40px;
+}

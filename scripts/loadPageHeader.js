@@ -10,7 +10,7 @@
         "</li>"+
         "<li class='headerNavBarButton'>"+
             "<text>[&nbsp</text>"+
-                "<a class='headerLink' href='/'>ギャラリー:gallery</a>"+
+                "<a class='headerLink' href='/gallery'>ギャラリー:gallery</a>"+
             "<text>&nbsp]</text>"+
         "</li>"+
         "<li class='headerNavBarButton'>"+
