@@ -1,14 +1,50 @@
 .galleryContainer {
     width: 1100px;
     margin: auto;
+    text-align: center;
 }
 
 .galleryBody {
     background-color: #181818;
     width: 1100px;
-    height: 700px;
+    height: 500px;
     margin-top: 20px;
     border-radius: 4px;
     text-align: center;
     padding-top: 40px;
+    padding-bottom: 36px;
+}
+
+.galleryNavbar {
+    width: 1060px;
+    margin: auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    background-color: #181818;
+    border-radius: 4px;
+    text-align: right;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.galleryNavbar * {
+    display: inline-block;
+}
+
+.navbarLinkText {
+    font-size: 13px;
+    font-family: "Lucida Console", Monaco, monospace;
+    padding-left: 4px;
+    padding-right: 4px;
+    color: white;
+}
+
+.navbarLinkText:hover {
+    color: hotpink;
+}
+
+.navbarLinkText:active {
+    color: purple;
 }
